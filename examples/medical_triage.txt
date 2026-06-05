@@ -1,0 +1,11 @@
+# 3-step modus ponens chain — medical triage scenario
+# Tests forward chaining through clinical rules to a patient outcome.
+#
+# Run: python scripts/demo.py --file examples/medical_triage.txt
+
+goal: Lucas has received a priority wristband.
+
+premise: Any patient with a temperature over 38.5 degrees Celsius has a fever.
+premise: Any patient with a fever is assessed by a triage nurse.
+premise: Any patient assessed by a triage nurse receives a priority wristband.
+premise: Lucas has a temperature of 39 degrees Celsius.

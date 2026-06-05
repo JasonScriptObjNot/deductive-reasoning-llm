@@ -1,0 +1,15 @@
+# ── already installed on the server ──────────────────────────────────────────
+# torch>=2.6.0+cu124
+# transformers>=4.52.4
+# trl>=0.18.2
+# peft>=0.18.0
+# unsloth
+# datasets>=4.3.0
+# scikit-learn>=1.8.0
+# bitsandbytes>=0.47.0
+# numpy
+
+# ── new dependencies (CPU-only, no CUDA conflicts) ────────────────────────────
+chromadb
+sentence-transformers
+rank-bm25

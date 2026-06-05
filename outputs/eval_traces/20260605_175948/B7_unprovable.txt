@@ -1,0 +1,232 @@
+══════════════════════════════════════════════════════════════════════
+B7 · unprovable · T4 — Unprovable goal (should stall cleanly)
+Goal : The committee will approve the proposal.
+Tier : T4   Provable: False
+══════════════════════════════════════════════════════════════════════
+
+GIVEN PREMISES
+  [1] The meeting was held on a Tuesday.
+  [2] All committee members received the agenda.
+  [3] The conference room was booked in advance.
+
+──────────────────────────────────────────────────────────────────────
+REASONING TRACE
+──────────────────────────────────────────────────────────────────────
+
+  ┌─ Iter 1  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 2  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 3  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 4  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 5  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 6  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+  │  ↩ BACKCHAIN  (consecutive_rejects=6)
+  │    anchor: The meeting was held on a Tuesday.
+
+
+  ┌─ Iter 7  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 8  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 9  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+  │  ⟵ GOAL PROJECTION  (consecutive_rejects=9)
+
+
+  ┌─ Iter 10  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 11  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 12  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+  │  ↩ BACKCHAIN  (consecutive_rejects=12)
+  │    anchor: The meeting was held on a Tuesday.
+  │  ⊗ PAIRWISE SEARCH  (consecutive_rejects=12)
+
+
+  ┌─ Iter 13  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 14  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 15  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 16  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 17  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 18  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+  │  ↩ BACKCHAIN  (consecutive_rejects=18)
+  │    anchor: The meeting was held on a Tuesday.
+  │  ⟵ GOAL PROJECTION  (consecutive_rejects=18)
+
+
+  ┌─ Iter 19  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 20  (store: 3 items)
+  │  Retrieved:
+  │    • All committee members received the agenda.
+  │    • The conference room was booked in advance.
+  │    • The meeting was held on a Tuesday.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+  MAX ITERATIONS (20) — no proof found
+
+
+══════════════════════════════════════════════════════════════════════
+STATUS: MAX_ITER
+  The goal could not be derived from the given premises within
+  20 iterations.
+
+══════════════════════════════════════════════════════════════════════

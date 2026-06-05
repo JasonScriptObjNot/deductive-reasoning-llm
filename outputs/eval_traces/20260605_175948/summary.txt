@@ -1,0 +1,150 @@
+══════════════════════════════════════════════════════════════════════
+DRAS Evaluation Summary
+══════════════════════════════════════════════════════════════════════
+
+  proof_completion_rate : 1.000  (8/8 provable solved)
+  false_proof_rate      : 0.000  (0/1 unprovable falsely proved)
+
+   ID    Pattern                        Status         Iters  Steps
+  ──── ───────────────────────────── ───────────── ───── ─────
+  ✓ B1   modus_tollens                 PROOF_FOUND    3      5
+  ✓ B2   hypothetical_syllogism        PROOF_FOUND    2      6
+  ✓ B3   disjunctive_syllogism         PROOF_FOUND    19     10
+  ✓ B4   contrapositive_chain          PROOF_FOUND    10     6
+  ✓ B5   mixed_negation                PROOF_FOUND    2      6
+  ✓ B6   long_forward_chain            PROOF_FOUND    12     13
+  ✓ B7   unprovable                    MAX_ITER       20     0
+  ✓ B8   multi_pattern_ds_forward      PROOF_FOUND    10     12
+  ✓ B9   multi_pattern_cp_forward      PROOF_FOUND    2      7
+
+──────────────────────────────────────────────────────────────────────
+PROOF TRACES
+──────────────────────────────────────────────────────────────────────
+
+──────────────────────────────────────────────────────────────────────
+B1 · Modus tollens — contrapositive instantiation
+Goal: Dr. Patel is not a licensed surgeon.
+  Premises:
+    [P1]  Dr. Patel has not completed a surgical residency.
+    [P2]  All licensed surgeons have completed a surgical residency.
+  Derivation:
+    [D1]  If Dr. Patel has not completed a surgical residency and she does not hold the title of a licensed surgeon.  ← [P2], [P1], [D2]
+    [D2]  If someone has not completed a surgical residency, they are not a licensed surgeon.  ← [P2], [P1]
+    [D3]  Dr. Patel is not a licensed surgeon.  ← [P2], [P1], [D2], [D1]
+  ∴  Dr. Patel is not a licensed surgeon.
+
+──────────────────────────────────────────────────────────────────────
+B2 · Hypothetical syllogism — 3-step forward chain
+Goal: Customers are unable to make purchases.
+  Premises:
+    [P1]  The primary server has failed.
+    [P2]  If transactions cannot be processed, customers are unable to make purchases.
+    [P3]  If the database goes offline, transactions cannot be processed.
+    [P4]  If the primary server fails, the database goes offline.
+  Derivation:
+    [D1]  Transactions cannot be processed.  ← [P4], [P3], [P2], [P1]
+    [D2]  Customers are unable to make purchases.  ← [P4], [P3], [P2], [P1], [D1]
+  ∴  Customers are unable to make purchases.
+
+──────────────────────────────────────────────────────────────────────
+B3 · Disjunctive syllogism + consequence chain
+Goal: The system will be offline for maintenance.
+  Premises:
+    [P1]  All hardware components have been inspected and confirmed fully functional.
+    [P2]  If a patch must be deployed, the system will be taken offline for maintenance.
+    [P3]  If the outage was caused by a software bug, a patch must be deployed.
+    [P4]  The network outage was caused by either a hardware fault or a software bug.
+  Derivation:
+    [D1]  No valid inference leads to the intended conclusion.  ← [P4], [P3], [P2], [D3], [D2]
+    [D2]  There is no valid inference follows from these premises toward the stated goal.  ← [P4], [P1], [P3], [P2], [D3]
+    [D3]  A software bug did not cause this network outage.  ← [P4], [P1], [P3], [P2]
+    [D4]  A patch must be deployed.  ← [P3], [P2], [D2], [D1], [D5]
+    [D5]  There is no valid path toward this goal.  ← [P3], [P2], [D3], [D2], [D1]
+    [D6]  The system will be offline for maintenance.  ← [P4], [P3], [P2], [D5], [D4]
+  ∴  The system will be offline for maintenance.
+
+──────────────────────────────────────────────────────────────────────
+B4 · Contrapositive chain — 4-step reverse derivation
+Goal: Alex is not cleared by security.
+  Premises:
+    [P1]  Alex does not hold top-level clearance.
+    [P2]  Anyone who can view classified files holds top-level clearance.
+    [P3]  Anyone who can access the server room can view the classified files.
+    [P4]  Anyone cleared by security can access the server room.
+  Derivation:
+    [D1]  If someone cannot view classified files, they do not hold top-level clearance.  ← [P4], [P3], [P2], [P1]
+    [D2]  Alex has been cleared by security.  ← [P4], [P3], [P2], [P1], [D1]
+  ∴  Alex is not cleared by security.
+
+──────────────────────────────────────────────────────────────────────
+B5 · Witness credibility — contrapositive then consequence
+Goal: Witness Morrison's testimony cannot influence the verdict.
+  Premises:
+    [P1]  Testimony stricken from the record cannot influence the verdict.
+    [P2]  Testimony that contains false statements is stricken from the record.
+    [P3]  Witness Morrison is not protected under the witness protection act.
+    [P4]  Every witness who testifies truthfully is protected under the witness protection act.
+  Derivation:
+    [D1]  Witnes Morrison’s testimony has been influenced by a false statement.  ← [P4], [P3], [P2], [P1]
+    [D2]  Witnes Morrison's testimony cannot influence the verdict.  ← [P4], [P3], [P2], [P1], [D1]
+  ∴  Witness Morrison's testimony cannot influence the verdict.
+
+──────────────────────────────────────────────────────────────────────
+B6 · Climate treaty — 6-step forward chain
+Goal: Verdania will attract international manufacturing investment.
+  Premises:
+    [P1]  Any nation with significantly reduced energy costs attracts international manufacturing investment.
+    [P2]  Verdania ratified the climate accord.
+    [P3]  Any nation that ratifies the climate accord must reduce emissions by 30 percent.
+    [P4]  Any nation that funds renewable energy projects sees a significant reduction in energy costs.
+    [P5]  Any nation with access to low-interest loans can fund large-scale renewable energy projects.
+    [P6]  Any nation that qualifies for green technology grants gains access to low-interest loans.
+    [P7]  Any nation that reduces emissions by 30 percent qualifies for green technology grants.
+  Derivation:
+    [D1]  Verdania has qualified for green technology grants.  ← [P3], [P7], [P1], [P2], [D2]
+    [D2]  Verdania must reduce its emissions by thirty percent.  ← [P3], [P7], [P6], [P5], [P4], [P1], [P2]
+    [D3]  Verdania has gained access to low-interest loans.  ← [P7], [P6], [P2], [D2], [D1]
+    [D4]  Verdania can fund large-scale renewable energy projects.  ← [P3], [P7], [P6], [P5], [D3]
+    [D5]  Verdania sees a significant reduction in energy costs.  ← [P3], [P7], [P6], [P5], [D4]
+    [D6]  Verdania attracts international manufacturing investment.  ← [P7], [P6], [P5], [P4], [D5]
+  ∴  Verdania will attract international manufacturing investment.
+
+──────────────────────────────────────────────────────────────────────
+B7 · T4 — Unprovable goal (should stall cleanly)
+Goal: The committee will approve the proposal.
+  MAX_ITER — no proof
+
+──────────────────────────────────────────────────────────────────────
+B8 · Protocol violation — DS identification then 3-step forward chain
+Goal: All non-essential operations at the facility have been suspended.
+  Premises:
+    [P1]  If the halt was caused by a protocol violation, the lead researcher must file an incident report.
+    [P2]  The research halt was caused by either equipment malfunction or a protocol violation.
+    [P3]  If the ethics committee conducts a review, all non-essential operations at the facility are suspended pending findings.
+    [P4]  If an incident report is filed, the ethics committee conducts a review.
+    [P5]  A post-incident equipment inspection confirmed all devices were functioning within normal parameters.
+  Derivation:
+    [D1]  No valid inference leads to this next step.  ← [P2], [P1], [P3], [D4], [D2]
+    [D2]  There is no valid inference follows from these premises toward the stated goal.  ← [P2], [P5], [P1], [P3], [D4]
+    [D3]  The research halt was caused by a protocol violation.  ← [P2], [P3], [D4], [D2], [D1]
+    [D4]  The research halt was not caused by equipment malfunction.  ← [P2], [P5], [P1], [P4], [P3]
+    [D5]  The ethics committee has conducted a full review.  ← [P1], [P4], [P3], [D3], [D6]
+    [D6]  The lead researcher must file an incident report.  ← [P2], [P1], [P3], [D4], [D3]
+    [D7]  All non-essential operations at the facility have been suspended.  ← [P5], [P4], [P3], [D6], [D5]
+  ∴  All non-essential operations at the facility have been suspended.
+
+──────────────────────────────────────────────────────────────────────
+B9 · Supplier disqualification — 2-hop contrapositive then 2-step forward chain
+Goal: Apex Supply Co. has received a formal exclusion notice.
+  Premises:
+    [P1]  All registered vendors are on the approved supplier list.
+    [P2]  Any company that cannot submit procurement bids receives a formal exclusion notice.
+    [P3]  Any vendor that is not a registered vendor cannot submit procurement bids.
+    [P4]  Apex Supply Co. has not completed the vendor onboarding process.
+    [P5]  Any vendor on the approved supplier list has completed the vendor onboarding process.
+  Derivation:
+    [D1]  Apex Supply Co. has not submitted procurement bids.  ← [P1], [P5], [P4], [P3], [P2]
+    [D2]  Apex Supply Co. will receive a formal exclusion notice.  ← [P5], [P4], [P3], [P2], [D1]
+  ∴  Apex Supply Co. has received a formal exclusion notice.
+
+══════════════════════════════════════════════════════════════════════

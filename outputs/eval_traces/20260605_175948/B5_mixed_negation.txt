@@ -1,0 +1,59 @@
+══════════════════════════════════════════════════════════════════════
+B5 · mixed_negation · Witness credibility — contrapositive then consequence
+Goal : Witness Morrison's testimony cannot influence the verdict.
+Tier : T3   Provable: True
+══════════════════════════════════════════════════════════════════════
+
+GIVEN PREMISES
+  [1] Every witness who testifies truthfully is protected under the witness protection act.
+  [2] Witness Morrison is not protected under the witness protection act.
+  [3] Testimony that contains false statements is stricken from the record.
+  [4] Testimony stricken from the record cannot influence the verdict.
+
+──────────────────────────────────────────────────────────────────────
+REASONING TRACE
+──────────────────────────────────────────────────────────────────────
+
+  ┌─ Iter 1  (store: 4 items)
+  │  Retrieved:
+  │    • Testimony stricken from the record cannot influence the verdict.
+  │    • Witness Morrison is not protected under the witness protection act.
+  │    • Testimony that contains false statements is stricken from the record.
+  │    • Every witness who testifies truthfully is protected under the witness protection act.
+  │  Generated:
+  │    Witnes Morrison’s testimony has been influenced by a false statement.
+  └─ ✓ ACCEPTED  goal_sim=0.727
+       Witnes Morrison’s testimony has been influenced by a false statement.
+
+
+  ┌─ Iter 2  (store: 5 items)
+  │  Retrieved:
+  │    • Testimony stricken from the record cannot influence the verdict.
+  │    • Witnes Morrison’s testimony has been influenced by a false statement.
+  │    • Testimony that contains false statements is stricken from the record.
+  │    • Witness Morrison is not protected under the witness protection act.
+  │    • Every witness who testifies truthfully is protected under the witness protection act.
+  │  Generated:
+  │    Witnes Morrison's testimony cannot influence the verdict.
+  └─ ✓ ACCEPTED  goal_sim=0.937
+       Witnes Morrison's testimony cannot influence the verdict.
+  ✓✓ PROOF FOUND — iter 2  goal_sim=0.937
+
+
+══════════════════════════════════════════════════════════════════════
+PROOF  (for expert verification)
+══════════════════════════════════════════════════════════════════════
+
+  Premises:
+    [P1]  Testimony stricken from the record cannot influence the verdict.
+    [P2]  Testimony that contains false statements is stricken from the record.
+    [P3]  Witness Morrison is not protected under the witness protection act.
+    [P4]  Every witness who testifies truthfully is protected under the witness protection act.
+
+  Derivation:
+    [D1]  Witnes Morrison’s testimony has been influenced by a false statement.  ← [P4], [P3], [P2], [P1]
+    [D2]  Witnes Morrison's testimony cannot influence the verdict.  ← [P4], [P3], [P2], [P1], [D1]
+
+  ∴  Goal established: Witness Morrison's testimony cannot influence the verdict.
+
+══════════════════════════════════════════════════════════════════════

@@ -1,0 +1,59 @@
+══════════════════════════════════════════════════════════════════════
+B2 · hypothetical_syllogism · Hypothetical syllogism — 3-step forward chain
+Goal : Customers are unable to make purchases.
+Tier : T2   Provable: True
+══════════════════════════════════════════════════════════════════════
+
+GIVEN PREMISES
+  [1] If the primary server fails, the database goes offline.
+  [2] If the database goes offline, transactions cannot be processed.
+  [3] If transactions cannot be processed, customers are unable to make purchases.
+  [4] The primary server has failed.
+
+──────────────────────────────────────────────────────────────────────
+REASONING TRACE
+──────────────────────────────────────────────────────────────────────
+
+  ┌─ Iter 1  (store: 4 items)
+  │  Retrieved:
+  │    • If transactions cannot be processed, customers are unable to make purchases.
+  │    • If the database goes offline, transactions cannot be processed.
+  │    • The primary server has failed.
+  │    • If the primary server fails, the database goes offline.
+  │  Generated:
+  │    Transactions cannot be processed.
+  └─ ✓ ACCEPTED  goal_sim=0.754
+       Transactions cannot be processed.
+
+
+  ┌─ Iter 2  (store: 5 items)
+  │  Retrieved:
+  │    • If transactions cannot be processed, customers are unable to make purchases.
+  │    • Transactions cannot be processed.
+  │    • If the database goes offline, transactions cannot be processed.
+  │    • The primary server has failed.
+  │    • If the primary server fails, the database goes offline.
+  │  Generated:
+  │    Customers are unable to make purchases.
+  └─ ✓ ACCEPTED  goal_sim=1.000
+       Customers are unable to make purchases.
+  ✓✓ PROOF FOUND — iter 2  goal_sim=1.000
+
+
+══════════════════════════════════════════════════════════════════════
+PROOF  (for expert verification)
+══════════════════════════════════════════════════════════════════════
+
+  Premises:
+    [P1]  The primary server has failed.
+    [P2]  If transactions cannot be processed, customers are unable to make purchases.
+    [P3]  If the database goes offline, transactions cannot be processed.
+    [P4]  If the primary server fails, the database goes offline.
+
+  Derivation:
+    [D1]  Transactions cannot be processed.  ← [P4], [P3], [P2], [P1]
+    [D2]  Customers are unable to make purchases.  ← [P4], [P3], [P2], [P1], [D1]
+
+  ∴  Goal established: Customers are unable to make purchases.
+
+══════════════════════════════════════════════════════════════════════

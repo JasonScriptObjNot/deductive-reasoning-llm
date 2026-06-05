@@ -1,0 +1,64 @@
+══════════════════════════════════════════════════════════════════════
+B1 · modus_tollens · Modus tollens — contrapositive instantiation
+Goal : Dr. Patel is not a licensed surgeon.
+Tier : T2   Provable: True
+══════════════════════════════════════════════════════════════════════
+
+GIVEN PREMISES
+  [1] All licensed surgeons have completed a surgical residency.
+  [2] Dr. Patel has not completed a surgical residency.
+
+──────────────────────────────────────────────────────────────────────
+REASONING TRACE
+──────────────────────────────────────────────────────────────────────
+
+  ┌─ Iter 1  (store: 2 items)
+  │  Retrieved:
+  │    • Dr. Patel has not completed a surgical residency.
+  │    • All licensed surgeons have completed a surgical residency.
+  │  Generated:
+  │    If someone has not completed a surgical residency, they are not a licensed surgeon.
+  └─ ✓ ACCEPTED  goal_sim=0.711
+       If someone has not completed a surgical residency, they are not a licensed surgeon.
+
+
+  ┌─ Iter 2  (store: 3 items)
+  │  Retrieved:
+  │    • Dr. Patel has not completed a surgical residency.
+  │    • If someone has not completed a surgical residency, they are not a licensed surgeon.
+  │    • All licensed surgeons have completed a surgical residency.
+  │  Generated:
+  │    If Dr. Patel has not completed a surgical residency and she does not hold the title of a licensed surgeon.
+  └─ ✓ ACCEPTED  goal_sim=0.818
+       If Dr. Patel has not completed a surgical residency and she does not hold the title of a licensed surgeon.
+
+
+  ┌─ Iter 3  (store: 4 items)
+  │  Retrieved:
+  │    • Dr. Patel has not completed a surgical residency.
+  │    • If Dr. Patel has not completed a surgical residency and she does not hold the title of a licensed surgeon.
+  │    • If someone has not completed a surgical residency, they are not a licensed surgeon.
+  │    • All licensed surgeons have completed a surgical residency.
+  │  Generated:
+  │    Dr. Patel is not a licensed surgeon.
+  └─ ✓ ACCEPTED  goal_sim=1.000
+       Dr. Patel is not a licensed surgeon.
+  ✓✓ PROOF FOUND — iter 3  goal_sim=1.000
+
+
+══════════════════════════════════════════════════════════════════════
+PROOF  (for expert verification)
+══════════════════════════════════════════════════════════════════════
+
+  Premises:
+    [P1]  Dr. Patel has not completed a surgical residency.
+    [P2]  All licensed surgeons have completed a surgical residency.
+
+  Derivation:
+    [D1]  If Dr. Patel has not completed a surgical residency and she does not hold the title of a licensed surgeon.  ← [P2], [P1], [D2]
+    [D2]  If someone has not completed a surgical residency, they are not a licensed surgeon.  ← [P2], [P1]
+    [D3]  Dr. Patel is not a licensed surgeon.  ← [P2], [P1], [D2], [D1]
+
+  ∴  Goal established: Dr. Patel is not a licensed surgeon.
+
+══════════════════════════════════════════════════════════════════════

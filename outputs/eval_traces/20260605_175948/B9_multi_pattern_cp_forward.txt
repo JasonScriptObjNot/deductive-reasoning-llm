@@ -1,0 +1,62 @@
+══════════════════════════════════════════════════════════════════════
+B9 · multi_pattern_cp_forward · Supplier disqualification — 2-hop contrapositive then 2-step forward chain
+Goal : Apex Supply Co. has received a formal exclusion notice.
+Tier : T3   Provable: True
+══════════════════════════════════════════════════════════════════════
+
+GIVEN PREMISES
+  [1] All registered vendors are on the approved supplier list.
+  [2] Any vendor on the approved supplier list has completed the vendor onboarding process.
+  [3] Apex Supply Co. has not completed the vendor onboarding process.
+  [4] Any vendor that is not a registered vendor cannot submit procurement bids.
+  [5] Any company that cannot submit procurement bids receives a formal exclusion notice.
+
+──────────────────────────────────────────────────────────────────────
+REASONING TRACE
+──────────────────────────────────────────────────────────────────────
+
+  ┌─ Iter 1  (store: 5 items)
+  │  Retrieved:
+  │    • Any company that cannot submit procurement bids receives a formal exclusion notice.
+  │    • Apex Supply Co. has not completed the vendor onboarding process.
+  │    • Any vendor that is not a registered vendor cannot submit procurement bids.
+  │    • All registered vendors are on the approved supplier list.
+  │    • Any vendor on the approved supplier list has completed the vendor onboarding process.
+  │  Generated:
+  │    Apex Supply Co. has not submitted procurement bids.
+  └─ ✓ ACCEPTED  goal_sim=0.725
+       Apex Supply Co. has not submitted procurement bids.
+
+
+  ┌─ Iter 2  (store: 6 items)
+  │  Retrieved:
+  │    • Any company that cannot submit procurement bids receives a formal exclusion notice.
+  │    • Apex Supply Co. has not submitted procurement bids.
+  │    • Apex Supply Co. has not completed the vendor onboarding process.
+  │    • Any vendor that is not a registered vendor cannot submit procurement bids.
+  │    • Any vendor on the approved supplier list has completed the vendor onboarding process.
+  │  Generated:
+  │    Apex Supply Co. will receive a formal exclusion notice.
+  └─ ✓ ACCEPTED  goal_sim=0.987
+       Apex Supply Co. will receive a formal exclusion notice.
+  ✓✓ PROOF FOUND — iter 2  goal_sim=0.987
+
+
+══════════════════════════════════════════════════════════════════════
+PROOF  (for expert verification)
+══════════════════════════════════════════════════════════════════════
+
+  Premises:
+    [P1]  All registered vendors are on the approved supplier list.
+    [P2]  Any company that cannot submit procurement bids receives a formal exclusion notice.
+    [P3]  Any vendor that is not a registered vendor cannot submit procurement bids.
+    [P4]  Apex Supply Co. has not completed the vendor onboarding process.
+    [P5]  Any vendor on the approved supplier list has completed the vendor onboarding process.
+
+  Derivation:
+    [D1]  Apex Supply Co. has not submitted procurement bids.  ← [P1], [P5], [P4], [P3], [P2]
+    [D2]  Apex Supply Co. will receive a formal exclusion notice.  ← [P5], [P4], [P3], [P2], [D1]
+
+  ∴  Goal established: Apex Supply Co. has received a formal exclusion notice.
+
+══════════════════════════════════════════════════════════════════════

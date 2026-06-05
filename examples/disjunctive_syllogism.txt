@@ -1,0 +1,12 @@
+# Disjunctive syllogism + 2-step forward chain
+# Tests elimination of a disjunct (either A or B, not A → B)
+# followed by consequence chaining.
+#
+# Run: python scripts/demo.py --file examples/disjunctive_syllogism.txt
+
+goal: The system will be offline for maintenance.
+
+premise: The network outage was caused by either a hardware fault or a software bug.
+premise: All hardware components have been inspected and confirmed fully functional.
+premise: If the outage was caused by a software bug, a patch must be deployed.
+premise: If a patch must be deployed, the system will be taken offline for maintenance.

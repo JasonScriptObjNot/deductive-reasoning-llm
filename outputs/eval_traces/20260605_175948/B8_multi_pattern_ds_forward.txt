@@ -1,0 +1,177 @@
+══════════════════════════════════════════════════════════════════════
+B8 · multi_pattern_ds_forward · Protocol violation — DS identification then 3-step forward chain
+Goal : All non-essential operations at the facility have been suspended.
+Tier : T3   Provable: True
+══════════════════════════════════════════════════════════════════════
+
+GIVEN PREMISES
+  [1] The research halt was caused by either equipment malfunction or a protocol violation.
+  [2] A post-incident equipment inspection confirmed all devices were functioning within normal parameters.
+  [3] If the halt was caused by a protocol violation, the lead researcher must file an incident report.
+  [4] If an incident report is filed, the ethics committee conducts a review.
+  [5] If the ethics committee conducts a review, all non-essential operations at the facility are suspended pending findings.
+
+──────────────────────────────────────────────────────────────────────
+REASONING TRACE
+──────────────────────────────────────────────────────────────────────
+
+  ┌─ Iter 1  (store: 5 items)
+  │  Retrieved:
+  │    • If the ethics committee conducts a review, all non-essential operations at the facility are suspended pending findings.
+  │    • The research halt was caused by either equipment malfunction or a protocol violation.
+  │    • A post-incident equipment inspection confirmed all devices were functioning within normal parameters.
+  │    • If the halt was caused by a protocol violation, the lead researcher must file an incident report.
+  │    • If an incident report is filed, the ethics committee conducts a review.
+  │  Generated:
+  │    The research halt was not caused by equipment malfunction.
+  └─ ✓ ACCEPTED  goal_sim=0.570
+       The research halt was not caused by equipment malfunction.
+
+
+  ┌─ Iter 2  (store: 6 items)
+  │  Retrieved:
+  │    • If the ethics committee conducts a review, all non-essential operations at the facility are suspended pending findings.
+  │    • The research halt was not caused by equipment malfunction.
+  │    • The research halt was caused by either equipment malfunction or a protocol violation.
+  │    • If the halt was caused by a protocol violation, the lead researcher must file an incident report.
+  │    • A post-incident equipment inspection confirmed all devices were functioning within normal parameters.
+  │  Generated:
+  │    The research halt did not occur due to equipment malfunction.
+  │  ≈ NEAR-DUPLICATE (sim=0.967) — skipped
+  │    The research halt did not occur due to equipment malfunction.
+  │    → backchain-dedup ✓: There is no valid inference follows from these premises toward the stated goal.
+  └─ ✓ ACCEPTED  goal_sim=0.426
+       There is no valid inference follows from these premises toward the stated goal.
+
+
+  ┌─ Iter 3  (store: 7 items)
+  │  Retrieved:
+  │    • If the ethics committee conducts a review, all non-essential operations at the facility are suspended pending findings.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • The research halt was not caused by equipment malfunction.
+  │    • The research halt was caused by either equipment malfunction or a protocol violation.
+  │    • If the halt was caused by a protocol violation, the lead researcher must file an incident report.
+  │  Generated:
+  │    No valid inference leads to this next step.
+  └─ ✓ ACCEPTED  goal_sim=0.460
+       No valid inference leads to this next step.
+
+
+  ┌─ Iter 4  (store: 8 items)
+  │  Retrieved:
+  │    • If the ethics committee conducts a review, all non-essential operations at the facility are suspended pending findings.
+  │    • No valid inference leads to this next step.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • The research halt was caused by either equipment malfunction or a protocol violation.
+  │    • The research halt was not caused by equipment malfunction.
+  │  Generated:
+  │    The research halt was caused by a protocol violation.
+  └─ ✓ ACCEPTED  goal_sim=0.523
+       The research halt was caused by a protocol violation.
+
+
+  ┌─ Iter 5  (store: 9 items)
+  │  Retrieved:
+  │    • If the ethics committee conducts a review, all non-essential operations at the facility are suspended pending findings.
+  │    • The research halt was caused by a protocol violation.
+  │    • The research halt was caused by either equipment malfunction or a protocol violation.
+  │    • If the halt was caused by a protocol violation, the lead researcher must file an incident report.
+  │    • The research halt was not caused by equipment malfunction.
+  │  Generated:
+  │    The research halt was caused by a protocol violation.
+  │  ≈ NEAR-DUPLICATE (sim=1.000) — skipped
+  │    The research halt was caused by a protocol violation.
+  │    → backchain-dedup ✓: The lead researcher must file an incident report.
+  └─ ✓ ACCEPTED  goal_sim=0.382
+       The lead researcher must file an incident report.
+
+
+  ┌─ Iter 6  (store: 10 items)
+  │  Retrieved:
+  │    • If the ethics committee conducts a review, all non-essential operations at the facility are suspended pending findings.
+  │    • The lead researcher must file an incident report.
+  │    • If the halt was caused by a protocol violation, the lead researcher must file an incident report.
+  │    • If an incident report is filed, the ethics committee conducts a review.
+  │    • The research halt was caused by a protocol violation.
+  │  Generated:
+  │    The lead researcher must file an incident report.
+  │  ≈ NEAR-DUPLICATE (sim=1.000) — skipped
+  │    The lead researcher must file an incident report.
+
+
+  ┌─ Iter 7  (store: 10 items)
+  │  Retrieved:
+  │    • If the ethics committee conducts a review, all non-essential operations at the facility are suspended pending findings.
+  │    • The lead researcher must file an incident report.
+  │    • If the halt was caused by a protocol violation, the lead researcher must file an incident report.
+  │    • If an incident report is filed, the ethics committee conducts a review.
+  │    • The research halt was caused by a protocol violation.
+  │  Generated:
+  │    The lead researcher must file an incident report.
+  │  ≈ NEAR-DUPLICATE (sim=1.000) — skipped
+  │    The lead researcher must file an incident report.
+
+
+  ┌─ Iter 8  (store: 10 items)
+  │  Retrieved:
+  │    • If the ethics committee conducts a review, all non-essential operations at the facility are suspended pending findings.
+  │    • The lead researcher must file an incident report.
+  │    • If the halt was caused by a protocol violation, the lead researcher must file an incident report.
+  │    • If an incident report is filed, the ethics committee conducts a review.
+  │    • The research halt was caused by a protocol violation.
+  │  Generated:
+  │    The lead researcher must file an incident report.
+  │  ≈ NEAR-DUPLICATE (sim=1.000) — skipped
+  │    The lead researcher must file an incident report.
+
+
+  ┌─ Iter 9  (store: 10 items)
+  │  Retrieved:
+  │    • If the ethics committee conducts a review, all non-essential operations at the facility are suspended pending findings.
+  │    • The lead researcher must file an incident report.
+  │    • If the halt was caused by a protocol violation, the lead researcher must file an incident report.
+  │    • If an incident report is filed, the ethics committee conducts a review.
+  │    • The research halt was caused by a protocol violation.
+  │  Generated [sampled]:
+  │    The ethics committee has conducted a full review.
+  └─ ✓ ACCEPTED  goal_sim=0.416
+       The ethics committee has conducted a full review.
+
+
+  ┌─ Iter 10  (store: 11 items)
+  │  Retrieved:
+  │    • If the ethics committee conducts a review, all non-essential operations at the facility are suspended pending findings.
+  │    • The ethics committee has conducted a full review.
+  │    • If an incident report is filed, the ethics committee conducts a review.
+  │    • A post-incident equipment inspection confirmed all devices were functioning within normal parameters.
+  │    • The lead researcher must file an incident report.
+  │  Generated:
+  │    All non-essential operations at the facility have been suspended.
+  └─ ✓ ACCEPTED  goal_sim=1.000
+       All non-essential operations at the facility have been suspended.
+  ✓✓ PROOF FOUND — iter 10  goal_sim=1.000
+
+
+══════════════════════════════════════════════════════════════════════
+PROOF  (for expert verification)
+══════════════════════════════════════════════════════════════════════
+
+  Premises:
+    [P1]  If the halt was caused by a protocol violation, the lead researcher must file an incident report.
+    [P2]  The research halt was caused by either equipment malfunction or a protocol violation.
+    [P3]  If the ethics committee conducts a review, all non-essential operations at the facility are suspended pending findings.
+    [P4]  If an incident report is filed, the ethics committee conducts a review.
+    [P5]  A post-incident equipment inspection confirmed all devices were functioning within normal parameters.
+
+  Derivation:
+    [D1]  No valid inference leads to this next step.  ← [P2], [P1], [P3], [D4], [D2]
+    [D2]  There is no valid inference follows from these premises toward the stated goal.  ← [P2], [P5], [P1], [P3], [D4]
+    [D3]  The research halt was caused by a protocol violation.  ← [P2], [P3], [D4], [D2], [D1]
+    [D4]  The research halt was not caused by equipment malfunction.  ← [P2], [P5], [P1], [P4], [P3]
+    [D5]  The ethics committee has conducted a full review.  ← [P1], [P4], [P3], [D3], [D6]
+    [D6]  The lead researcher must file an incident report.  ← [P2], [P1], [P3], [D4], [D3]
+    [D7]  All non-essential operations at the facility have been suspended.  ← [P5], [P4], [P3], [D6], [D5]
+
+  ∴  Goal established: All non-essential operations at the facility have been suspended.
+
+══════════════════════════════════════════════════════════════════════

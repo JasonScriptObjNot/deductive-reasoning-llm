@@ -1,0 +1,193 @@
+[
+  {
+    "id": "B1",
+    "tier": "T2",
+    "pattern": "modus_tollens",
+    "label": "Modus tollens — contrapositive instantiation",
+    "goal": "Dr. Patel is not a licensed surgeon.",
+    "seeds": [
+      "All licensed surgeons have completed a surgical residency.",
+      "Dr. Patel has not completed a surgical residency."
+    ],
+    "expected_steps": 2,
+    "expected_proof": [
+      "If someone has not completed a surgical residency, they are not a licensed surgeon.",
+      "Dr. Patel is not a licensed surgeon."
+    ],
+    "provable": true
+  },
+  {
+    "id": "B2",
+    "tier": "T2",
+    "pattern": "hypothetical_syllogism",
+    "label": "Hypothetical syllogism — 3-step forward chain",
+    "goal": "Customers are unable to make purchases.",
+    "seeds": [
+      "If the primary server fails, the database goes offline.",
+      "If the database goes offline, transactions cannot be processed.",
+      "If transactions cannot be processed, customers are unable to make purchases.",
+      "The primary server has failed."
+    ],
+    "expected_steps": 3,
+    "expected_proof": [
+      "The database has gone offline.",
+      "Transactions cannot be processed.",
+      "Customers are unable to make purchases."
+    ],
+    "provable": true
+  },
+  {
+    "id": "B3",
+    "tier": "T2",
+    "pattern": "disjunctive_syllogism",
+    "label": "Disjunctive syllogism + consequence chain",
+    "goal": "The system will be offline for maintenance.",
+    "seeds": [
+      "The network outage was caused by either a hardware fault or a software bug.",
+      "All hardware components have been inspected and confirmed fully functional.",
+      "If the outage was caused by a software bug, a patch must be deployed.",
+      "If a patch must be deployed, the system will be taken offline for maintenance."
+    ],
+    "expected_steps": 3,
+    "expected_proof": [
+      "The network outage was not caused by a hardware fault.",
+      "The network outage was caused by a software bug.",
+      "A patch must be deployed.",
+      "The system will be offline for maintenance."
+    ],
+    "provable": true
+  },
+  {
+    "id": "B4",
+    "tier": "T3",
+    "pattern": "contrapositive_chain",
+    "label": "Contrapositive chain — 4-step reverse derivation",
+    "goal": "Alex is not cleared by security.",
+    "seeds": [
+      "Anyone cleared by security can access the server room.",
+      "Anyone who can access the server room can view the classified files.",
+      "Anyone who can view classified files holds top-level clearance.",
+      "Alex does not hold top-level clearance."
+    ],
+    "expected_steps": 4,
+    "expected_proof": [
+      "Anyone who does not hold top-level clearance cannot view classified files.",
+      "Alex cannot view classified files.",
+      "Anyone who cannot view classified files cannot access the server room.",
+      "Alex cannot access the server room.",
+      "Anyone who cannot access the server room is not cleared by security.",
+      "Alex is not cleared by security."
+    ],
+    "provable": true
+  },
+  {
+    "id": "B5",
+    "tier": "T3",
+    "pattern": "mixed_negation",
+    "label": "Witness credibility — contrapositive then consequence",
+    "goal": "Witness Morrison's testimony cannot influence the verdict.",
+    "seeds": [
+      "Every witness who testifies truthfully is protected under the witness protection act.",
+      "Witness Morrison is not protected under the witness protection act.",
+      "Testimony that contains false statements is stricken from the record.",
+      "Testimony stricken from the record cannot influence the verdict."
+    ],
+    "expected_steps": 4,
+    "expected_proof": [
+      "If a witness is not protected under the witness protection act, they did not testify truthfully.",
+      "Witness Morrison did not testify truthfully.",
+      "Witness Morrison's testimony contains false statements.",
+      "Witness Morrison's testimony has been stricken from the record.",
+      "Witness Morrison's testimony cannot influence the verdict."
+    ],
+    "provable": true
+  },
+  {
+    "id": "B6",
+    "tier": "T3",
+    "pattern": "long_forward_chain",
+    "label": "Climate treaty — 6-step forward chain",
+    "goal": "Verdania will attract international manufacturing investment.",
+    "seeds": [
+      "Any nation that ratifies the climate accord must reduce emissions by 30 percent.",
+      "Any nation that reduces emissions by 30 percent qualifies for green technology grants.",
+      "Any nation that qualifies for green technology grants gains access to low-interest loans.",
+      "Any nation with access to low-interest loans can fund large-scale renewable energy projects.",
+      "Any nation that funds renewable energy projects sees a significant reduction in energy costs.",
+      "Any nation with significantly reduced energy costs attracts international manufacturing investment.",
+      "Verdania ratified the climate accord."
+    ],
+    "expected_steps": 6,
+    "expected_proof": [
+      "Verdania must reduce emissions by 30 percent.",
+      "Verdania qualifies for green technology grants.",
+      "Verdania gains access to low-interest loans.",
+      "Verdania can fund large-scale renewable energy projects.",
+      "Verdania sees a significant reduction in energy costs.",
+      "Verdania attracts international manufacturing investment."
+    ],
+    "provable": true
+  },
+  {
+    "id": "B7",
+    "tier": "T4",
+    "pattern": "unprovable",
+    "label": "T4 — Unprovable goal (should stall cleanly)",
+    "goal": "The committee will approve the proposal.",
+    "seeds": [
+      "The meeting was held on a Tuesday.",
+      "All committee members received the agenda.",
+      "The conference room was booked in advance."
+    ],
+    "expected_steps": 0,
+    "expected_proof": [],
+    "provable": false
+  },
+  {
+    "id": "B8",
+    "tier": "T3",
+    "pattern": "multi_pattern_ds_forward",
+    "label": "Protocol violation — DS identification then 3-step forward chain",
+    "goal": "All non-essential operations at the facility have been suspended.",
+    "seeds": [
+      "The research halt was caused by either equipment malfunction or a protocol violation.",
+      "A post-incident equipment inspection confirmed all devices were functioning within normal parameters.",
+      "If the halt was caused by a protocol violation, the lead researcher must file an incident report.",
+      "If an incident report is filed, the ethics committee conducts a review.",
+      "If the ethics committee conducts a review, all non-essential operations at the facility are suspended pending findings."
+    ],
+    "expected_steps": 5,
+    "expected_proof": [
+      "The research halt was not caused by equipment malfunction.",
+      "The research halt was caused by a protocol violation.",
+      "The lead researcher must file an incident report.",
+      "The ethics committee must conduct a review.",
+      "All non-essential operations at the facility have been suspended."
+    ],
+    "provable": true
+  },
+  {
+    "id": "B9",
+    "tier": "T3",
+    "pattern": "multi_pattern_cp_forward",
+    "label": "Supplier disqualification — 2-hop contrapositive then 2-step forward chain",
+    "goal": "Apex Supply Co. has received a formal exclusion notice.",
+    "seeds": [
+      "All registered vendors are on the approved supplier list.",
+      "Any vendor on the approved supplier list has completed the vendor onboarding process.",
+      "Apex Supply Co. has not completed the vendor onboarding process.",
+      "Any vendor that is not a registered vendor cannot submit procurement bids.",
+      "Any company that cannot submit procurement bids receives a formal exclusion notice."
+    ],
+    "expected_steps": 6,
+    "expected_proof": [
+      "If a vendor has not completed the vendor onboarding process, they are not on the approved supplier list.",
+      "Apex Supply Co. is not on the approved supplier list.",
+      "If a vendor is not on the approved supplier list, they are not a registered vendor.",
+      "Apex Supply Co. is not a registered vendor.",
+      "Apex Supply Co. cannot submit procurement bids.",
+      "Apex Supply Co. has received a formal exclusion notice."
+    ],
+    "provable": true
+  }
+]

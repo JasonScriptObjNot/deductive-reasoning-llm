@@ -1,0 +1,151 @@
+══════════════════════════════════════════════════════════════════════
+B4 · contrapositive_chain · Contrapositive chain — 4-step reverse derivation
+Goal : Alex is not cleared by security.
+Tier : T3   Provable: True
+══════════════════════════════════════════════════════════════════════
+
+GIVEN PREMISES
+  [1] Anyone cleared by security can access the server room.
+  [2] Anyone who can access the server room can view the classified files.
+  [3] Anyone who can view classified files holds top-level clearance.
+  [4] Alex does not hold top-level clearance.
+
+──────────────────────────────────────────────────────────────────────
+REASONING TRACE
+──────────────────────────────────────────────────────────────────────
+
+  ┌─ Iter 1  (store: 4 items)
+  │  Retrieved:
+  │    • Alex does not hold top-level clearance.
+  │    • Anyone cleared by security can access the server room.
+  │    • Anyone who can view classified files holds top-level clearance.
+  │    • Anyone who can access the server room can view the classified files.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 2  (store: 4 items)
+  │  Retrieved:
+  │    • Alex does not hold top-level clearance.
+  │    • Anyone cleared by security can access the server room.
+  │    • Anyone who can view classified files holds top-level clearance.
+  │    • Anyone who can access the server room can view the classified files.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 3  (store: 4 items)
+  │  Retrieved:
+  │    • Alex does not hold top-level clearance.
+  │    • Anyone cleared by security can access the server room.
+  │    • Anyone who can view classified files holds top-level clearance.
+  │    • Anyone who can access the server room can view the classified files.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 4  (store: 4 items)
+  │  Retrieved:
+  │    • Alex does not hold top-level clearance.
+  │    • Anyone cleared by security can access the server room.
+  │    • Anyone who can view classified files holds top-level clearance.
+  │    • Anyone who can access the server room can view the classified files.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 5  (store: 4 items)
+  │  Retrieved:
+  │    • Alex does not hold top-level clearance.
+  │    • Anyone cleared by security can access the server room.
+  │    • Anyone who can view classified files holds top-level clearance.
+  │    • Anyone who can access the server room can view the classified files.
+  │  Generated [sampled]:
+  │    If someone cannot view classified files, they do not hold top-level clearance.
+  └─ ✓ ACCEPTED  goal_sim=0.651
+       If someone cannot view classified files, they do not hold top-level clearance.
+
+
+  ┌─ Iter 6  (store: 5 items)
+  │  Retrieved:
+  │    • Alex does not hold top-level clearance.
+  │    • If someone cannot view classified files, they do not hold top-level clearance.
+  │    • Anyone who can view classified files holds top-level clearance.
+  │    • Anyone who can access the server room can view the classified files.
+  │    • Anyone cleared by security can access the server room.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 7  (store: 5 items)
+  │  Retrieved:
+  │    • Alex does not hold top-level clearance.
+  │    • If someone cannot view classified files, they do not hold top-level clearance.
+  │    • Anyone who can view classified files holds top-level clearance.
+  │    • Anyone who can access the server room can view the classified files.
+  │    • Anyone cleared by security can access the server room.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 8  (store: 5 items)
+  │  Retrieved:
+  │    • Alex does not hold top-level clearance.
+  │    • If someone cannot view classified files, they do not hold top-level clearance.
+  │    • Anyone who can view classified files holds top-level clearance.
+  │    • Anyone who can access the server room can view the classified files.
+  │    • Anyone cleared by security can access the server room.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 9  (store: 5 items)
+  │  Retrieved:
+  │    • Alex does not hold top-level clearance.
+  │    • If someone cannot view classified files, they do not hold top-level clearance.
+  │    • Anyone who can view classified files holds top-level clearance.
+  │    • Anyone who can access the server room can view the classified files.
+  │    • Anyone cleared by security can access the server room.
+  │  Generated [sampled]:
+  │    If Alex cannot view classified files and he doesn't have top-level clearance,
+  │  ✗ REJECTED — Step appears incomplete (ends with comma — truncated conditional).
+
+
+  ┌─ Iter 10  (store: 5 items)
+  │  Retrieved:
+  │    • Alex does not hold top-level clearance.
+  │    • If someone cannot view classified files, they do not hold top-level clearance.
+  │    • Anyone who can view classified files holds top-level clearance.
+  │    • Anyone who can access the server room can view the classified files.
+  │    • Anyone cleared by security can access the server room.
+  │  Generated [sampled]:
+  │    Alex has been cleared by security.
+  └─ ✓ ACCEPTED  goal_sim=0.874
+       Alex has been cleared by security.
+  ✓✓ PROOF FOUND — iter 10  goal_sim=0.874
+
+
+══════════════════════════════════════════════════════════════════════
+PROOF  (for expert verification)
+══════════════════════════════════════════════════════════════════════
+
+  Premises:
+    [P1]  Alex does not hold top-level clearance.
+    [P2]  Anyone who can view classified files holds top-level clearance.
+    [P3]  Anyone who can access the server room can view the classified files.
+    [P4]  Anyone cleared by security can access the server room.
+
+  Derivation:
+    [D1]  If someone cannot view classified files, they do not hold top-level clearance.  ← [P4], [P3], [P2], [P1]
+    [D2]  Alex has been cleared by security.  ← [P4], [P3], [P2], [P1], [D1]
+
+  ∴  Goal established: Alex is not cleared by security.
+
+══════════════════════════════════════════════════════════════════════

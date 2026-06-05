@@ -1,0 +1,198 @@
+══════════════════════════════════════════════════════════════════════
+B6 · long_forward_chain · Climate treaty — 6-step forward chain
+Goal : Verdania will attract international manufacturing investment.
+Tier : T3   Provable: True
+══════════════════════════════════════════════════════════════════════
+
+GIVEN PREMISES
+  [1] Any nation that ratifies the climate accord must reduce emissions by 30 percent.
+  [2] Any nation that reduces emissions by 30 percent qualifies for green technology grants.
+  [3] Any nation that qualifies for green technology grants gains access to low-interest loans.
+  [4] Any nation with access to low-interest loans can fund large-scale renewable energy projects.
+  [5] Any nation that funds renewable energy projects sees a significant reduction in energy costs.
+  [6] Any nation with significantly reduced energy costs attracts international manufacturing investment.
+  [7] Verdania ratified the climate accord.
+
+──────────────────────────────────────────────────────────────────────
+REASONING TRACE
+──────────────────────────────────────────────────────────────────────
+
+  ┌─ Iter 1  (store: 7 items)
+  │  Retrieved:
+  │    • Any nation that ratifies the climate accord must reduce emissions by 30 percent.
+  │    • Any nation that reduces emissions by 30 percent qualifies for green technology grants.
+  │    • Any nation that qualifies for green technology grants gains access to low-interest loans.
+  │    • Any nation with access to low-interest loans can fund large-scale renewable energy projects.
+  │    • Any nation that funds renewable energy projects sees a significant reduction in energy costs.
+  │    • Any nation with significantly reduced energy costs attracts international manufacturing investment.
+  │    • Verdania ratified the climate accord.
+  │  Generated:
+  │    Verdania must reduce its emissions by thirty percent.
+  └─ ✓ ACCEPTED  goal_sim=0.644
+       Verdania must reduce its emissions by thirty percent.
+
+
+  ┌─ Iter 2  (store: 8 items)
+  │  Retrieved:
+  │    • Any nation with significantly reduced energy costs attracts international manufacturing investment.
+  │    • Verdania must reduce its emissions by thirty percent.
+  │    • Any nation that ratifies the climate accord must reduce emissions by 30 percent.
+  │    • Any nation that reduces emissions by 30 percent qualifies for green technology grants.
+  │    • Verdania ratified the climate accord.
+  │  Generated:
+  │    Verdania has qualified for green technology grants.
+  └─ ✓ ACCEPTED  goal_sim=0.750
+       Verdania has qualified for green technology grants.
+
+
+  ┌─ Iter 3  (store: 9 items)
+  │  Retrieved:
+  │    • Verdania has qualified for green technology grants.
+  │    • Verdania ratified the climate accord.
+  │    • Any nation that qualifies for green technology grants gains access to low-interest loans.
+  │    • Any nation that reduces emissions by 30 percent qualifies for green technology grants.
+  │    • Verdania must reduce its emissions by thirty percent.
+  │  Generated:
+  │    Verdania has gained access to low-interest loans.
+  └─ ✓ ACCEPTED  goal_sim=0.737
+       Verdania has gained access to low-interest loans.
+
+
+  ┌─ Iter 4  (store: 10 items)
+  │  Retrieved:
+  │    • Verdania has qualified for green technology grants.
+  │    • Verdania has gained access to low-interest loans.
+  │    • Any nation that qualifies for green technology grants gains access to low-interest loans.
+  │    • Any nation with access to low-interest loans can fund large-scale renewable energy projects.
+  │    • Verdania ratified the climate accord.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 5  (store: 10 items)
+  │  Retrieved:
+  │    • Verdania has qualified for green technology grants.
+  │    • Verdania has gained access to low-interest loans.
+  │    • Any nation that qualifies for green technology grants gains access to low-interest loans.
+  │    • Any nation with access to low-interest loans can fund large-scale renewable energy projects.
+  │    • Verdania ratified the climate accord.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 6  (store: 10 items)
+  │  Retrieved:
+  │    • Verdania has qualified for green technology grants.
+  │    • Verdania has gained access to low-interest loans.
+  │    • Any nation that qualifies for green technology grants gains access to low-interest loans.
+  │    • Any nation with access to low-interest loans can fund large-scale renewable energy projects.
+  │    • Verdania ratified the climate accord.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 7  (store: 10 items)
+  │  Retrieved:
+  │    • Verdania has qualified for green technology grants.
+  │    • Verdania has gained access to low-interest loans.
+  │    • Any nation that qualifies for green technology grants gains access to low-interest loans.
+  │    • Any nation with access to low-interest loans can fund large-scale renewable energy projects.
+  │    • Verdania ratified the climate accord.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 8  (store: 10 items)
+  │  Retrieved:
+  │    • Verdania has qualified for green technology grants.
+  │    • Verdania has gained access to low-interest loans.
+  │    • Any nation that qualifies for green technology grants gains access to low-interest loans.
+  │    • Any nation with access to low-interest loans can fund large-scale renewable energy projects.
+  │    • Verdania ratified the climate accord.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 9  (store: 10 items)
+  │  Retrieved:
+  │    • Verdania has qualified for green technology grants.
+  │    • Verdania has gained access to low-interest loans.
+  │    • Any nation that qualifies for green technology grants gains access to low-interest loans.
+  │    • Any nation with access to low-interest loans can fund large-scale renewable energy projects.
+  │    • Verdania ratified the climate accord.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+  │  ↩ BACKCHAIN  (consecutive_rejects=6)
+  │    anchor: Verdania has gained access to low-interest loans.
+
+
+  ┌─ Iter 10  (store: 10 items)
+  │  Retrieved:
+  │    • Verdania has qualified for green technology grants.
+  │    • Verdania has gained access to low-interest loans.
+  │    • Any nation that qualifies for green technology grants gains access to low-interest loans.
+  │    • Any nation with access to low-interest loans can fund large-scale renewable energy projects.
+  │    • Verdania ratified the climate accord.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 11  (store: 10 items)
+  │  Retrieved:
+  │    • Verdania has qualified for green technology grants.
+  │    • Verdania has gained access to low-interest loans.
+  │    • Any nation that qualifies for green technology grants gains access to low-interest loans.
+  │    • Any nation with access to low-interest loans can fund large-scale renewable energy projects.
+  │    • Verdania ratified the climate accord.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 12  (store: 10 items)
+  │  Retrieved:
+  │    • Verdania has qualified for green technology grants.
+  │    • Verdania has gained access to low-interest loans.
+  │    • Any nation that qualifies for green technology grants gains access to low-interest loans.
+  │    • Any nation with access to low-interest loans can fund large-scale renewable energy projects.
+  │    • Verdania ratified the climate accord.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+  │  ⟵ GOAL PROJECTION  (consecutive_rejects=9)
+  │    → direct rule application: Verdania can fund large-scale renewable energy projects.
+  │    → direct rule application: Verdania sees a significant reduction in energy costs.
+  │    → direct rule application: Verdania attracts international manufacturing investment.
+
+
+══════════════════════════════════════════════════════════════════════
+PROOF  (for expert verification)
+══════════════════════════════════════════════════════════════════════
+
+  Premises:
+    [P1]  Any nation with significantly reduced energy costs attracts international manufacturing investment.
+    [P2]  Verdania ratified the climate accord.
+    [P3]  Any nation that ratifies the climate accord must reduce emissions by 30 percent.
+    [P4]  Any nation that funds renewable energy projects sees a significant reduction in energy costs.
+    [P5]  Any nation with access to low-interest loans can fund large-scale renewable energy projects.
+    [P6]  Any nation that qualifies for green technology grants gains access to low-interest loans.
+    [P7]  Any nation that reduces emissions by 30 percent qualifies for green technology grants.
+
+  Derivation:
+    [D1]  Verdania has qualified for green technology grants.  ← [P3], [P7], [P1], [P2], [D2]
+    [D2]  Verdania must reduce its emissions by thirty percent.  ← [P3], [P7], [P6], [P5], [P4], [P1], [P2]
+    [D3]  Verdania has gained access to low-interest loans.  ← [P7], [P6], [P2], [D2], [D1]
+    [D4]  Verdania can fund large-scale renewable energy projects.  ← [P3], [P7], [P6], [P5], [D3]
+    [D5]  Verdania sees a significant reduction in energy costs.  ← [P3], [P7], [P6], [P5], [D4]
+    [D6]  Verdania attracts international manufacturing investment.  ← [P7], [P6], [P5], [P4], [D5]
+
+  ∴  Goal established: Verdania will attract international manufacturing investment.
+
+══════════════════════════════════════════════════════════════════════

@@ -1,0 +1,15 @@
+# 6-step forward chain (the hardest benchmark, B6)
+# Tests long modus ponens chains where the model must apply universal rules to a specific entity
+# across six sequential steps.
+#
+# Run: python scripts/demo.py --file examples/climate_treaty.txt
+
+goal: Verdania will attract international manufacturing investment.
+
+premise: Any nation that ratifies the climate accord must reduce emissions by 30 percent.
+premise: Any nation that reduces emissions by 30 percent qualifies for green technology grants.
+premise: Any nation that qualifies for green technology grants gains access to low-interest loans.
+premise: Any nation with access to low-interest loans can fund large-scale renewable energy projects.
+premise: Any nation that funds renewable energy projects sees a significant reduction in energy costs.
+premise: Any nation with significantly reduced energy costs attracts international manufacturing investment.
+premise: Verdania ratified the climate accord.

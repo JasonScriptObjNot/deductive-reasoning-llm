@@ -1,0 +1,10 @@
+# 2-step modus tollens — reasoning by contrapositive
+# Tests whether the model can form and apply a contrapositive rule
+# ("if not B then not A") from a universal ("all A have B").
+#
+# Run: python scripts/demo.py --file examples/contrapositive.txt
+
+goal: Dr. Patel is not a licensed surgeon.
+
+premise: All licensed surgeons have completed a surgical residency.
+premise: Dr. Patel has not completed a surgical residency.

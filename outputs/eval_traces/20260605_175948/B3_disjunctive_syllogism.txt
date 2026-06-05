@@ -1,0 +1,279 @@
+══════════════════════════════════════════════════════════════════════
+B3 · disjunctive_syllogism · Disjunctive syllogism + consequence chain
+Goal : The system will be offline for maintenance.
+Tier : T2   Provable: True
+══════════════════════════════════════════════════════════════════════
+
+GIVEN PREMISES
+  [1] The network outage was caused by either a hardware fault or a software bug.
+  [2] All hardware components have been inspected and confirmed fully functional.
+  [3] If the outage was caused by a software bug, a patch must be deployed.
+  [4] If a patch must be deployed, the system will be taken offline for maintenance.
+
+──────────────────────────────────────────────────────────────────────
+REASONING TRACE
+──────────────────────────────────────────────────────────────────────
+
+  ┌─ Iter 1  (store: 4 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • The network outage was caused by either a hardware fault or a software bug.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │    • All hardware components have been inspected and confirmed fully functional.
+  │  Generated:
+  │    A software bug did not cause this network outage.
+  └─ ✓ ACCEPTED  goal_sim=0.688
+       A software bug did not cause this network outage.
+
+
+  ┌─ Iter 2  (store: 5 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • A software bug did not cause this network outage.
+  │    • The network outage was caused by either a hardware fault or a software bug.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │    • All hardware components have been inspected and confirmed fully functional.
+  │  Generated:
+  │    There is no valid inference follows from these premises toward the stated goal.
+  └─ ✓ ACCEPTED  goal_sim=0.458
+       There is no valid inference follows from these premises toward the stated goal.
+
+
+  ┌─ Iter 3  (store: 6 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │    • A software bug did not cause this network outage.
+  │    • The network outage was caused by either a hardware fault or a software bug.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 4  (store: 6 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │    • A software bug did not cause this network outage.
+  │    • The network outage was caused by either a hardware fault or a software bug.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 5  (store: 6 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │    • A software bug did not cause this network outage.
+  │    • The network outage was caused by either a hardware fault or a software bug.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 6  (store: 6 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │    • A software bug did not cause this network outage.
+  │    • The network outage was caused by either a hardware fault or a software bug.
+  │  Generated [sampled]:
+  │    No valid inference leads to the intended conclusion.
+  └─ ✓ ACCEPTED  goal_sim=0.464
+       No valid inference leads to the intended conclusion.
+
+
+  ┌─ Iter 7  (store: 7 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • No valid inference leads to the intended conclusion.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • A software bug did not cause this network outage.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 8  (store: 7 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • No valid inference leads to the intended conclusion.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • A software bug did not cause this network outage.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 9  (store: 7 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • No valid inference leads to the intended conclusion.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • A software bug did not cause this network outage.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 10  (store: 7 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • No valid inference leads to the intended conclusion.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • A software bug did not cause this network outage.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 11  (store: 7 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • No valid inference leads to the intended conclusion.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • A software bug did not cause this network outage.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 12  (store: 7 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • No valid inference leads to the intended conclusion.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • A software bug did not cause this network outage.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+  │  ↩ BACKCHAIN  (consecutive_rejects=6)
+  │    anchor: No valid inference leads to the intended conclusion.
+  │    → backchain ✓: There is no valid path toward this goal.
+  └─ ✓ ACCEPTED  goal_sim=0.486
+       There is no valid path toward this goal.
+
+
+  ┌─ Iter 13  (store: 8 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • There is no valid path toward this goal.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • No valid inference leads to the intended conclusion.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 14  (store: 8 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • There is no valid path toward this goal.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • No valid inference leads to the intended conclusion.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 15  (store: 8 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • There is no valid path toward this goal.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • No valid inference leads to the intended conclusion.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │  Generated:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 16  (store: 8 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • There is no valid path toward this goal.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • No valid inference leads to the intended conclusion.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 17  (store: 8 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • There is no valid path toward this goal.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • No valid inference leads to the intended conclusion.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+
+
+  ┌─ Iter 18  (store: 8 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • There is no valid path toward this goal.
+  │    • There is no valid inference follows from these premises toward the stated goal.
+  │    • No valid inference leads to the intended conclusion.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │  Generated [sampled]:
+  │    No valid inference follows from these premises toward the stated goal.
+  │  ✗ REJECTED — Refusal text is not a valid inference step.
+  │  ↩ BACKCHAIN  (consecutive_rejects=6)
+  │    anchor: There is no valid path toward this goal.
+  │    → backchain ✓: A patch must be deployed.
+  └─ ✓ ACCEPTED  goal_sim=0.669
+       A patch must be deployed.
+
+
+  ┌─ Iter 19  (store: 9 items)
+  │  Retrieved:
+  │    • If a patch must be deployed, the system will be taken offline for maintenance.
+  │    • A patch must be deployed.
+  │    • If the outage was caused by a software bug, a patch must be deployed.
+  │    • The network outage was caused by either a hardware fault or a software bug.
+  │    • There is no valid path toward this goal.
+  │  Generated:
+  │    The system will be offline for maintenance.
+  └─ ✓ ACCEPTED  goal_sim=1.000
+       The system will be offline for maintenance.
+  ✓✓ PROOF FOUND — iter 19  goal_sim=1.000
+
+
+══════════════════════════════════════════════════════════════════════
+PROOF  (for expert verification)
+══════════════════════════════════════════════════════════════════════
+
+  Premises:
+    [P1]  All hardware components have been inspected and confirmed fully functional.
+    [P2]  If a patch must be deployed, the system will be taken offline for maintenance.
+    [P3]  If the outage was caused by a software bug, a patch must be deployed.
+    [P4]  The network outage was caused by either a hardware fault or a software bug.
+
+  Derivation:
+    [D1]  No valid inference leads to the intended conclusion.  ← [P4], [P3], [P2], [D3], [D2]
+    [D2]  There is no valid inference follows from these premises toward the stated goal.  ← [P4], [P1], [P3], [P2], [D3]
+    [D3]  A software bug did not cause this network outage.  ← [P4], [P1], [P3], [P2]
+    [D4]  A patch must be deployed.  ← [P3], [P2], [D2], [D1], [D5]
+    [D5]  There is no valid path toward this goal.  ← [P3], [P2], [D3], [D2], [D1]
+    [D6]  The system will be offline for maintenance.  ← [P4], [P3], [P2], [D5], [D4]
+
+  ∴  Goal established: The system will be offline for maintenance.
+
+══════════════════════════════════════════════════════════════════════

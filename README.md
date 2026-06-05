@@ -93,35 +93,66 @@ Pre-run traces for all nine problems are in [`outputs/eval_traces/`](outputs/eva
 
 ## Quick start
 
-### Read the pre-run traces (no GPU required)
+### Option A — Read the pre-run traces (no GPU, no setup)
 
-The [`outputs/eval_traces/`](outputs/eval_traces/) directory contains a detailed reasoning log for each benchmark problem: every retrieval, every generated step, every validator decision, every recovery mechanism that fired, and the final attributed proof.
+The [`outputs/eval_traces/`](outputs/eval_traces/) directory contains a detailed reasoning log for each benchmark problem — every retrieval, generated step, validator decision, and recovery mechanism that fired, ending with the attributed proof. Open any file directly on GitHub or clone and read locally.
 
 ```
 outputs/eval_traces/20260605_175948/
-  summary.txt                       ← score table + all proofs
+  summary.txt                       ← score table + all proofs in one file
   B6_long_forward_chain.txt         ← most interesting: goal projection fires at iter 12
   ...
 ```
 
-### Try your own premises (GPU required)
+---
 
-Enter a goal and premises at the console:
+### Option B — Run the demo or try your own premises (GPU required)
+
+**Step 1 — Install dependencies**
+
+```bash
+pip install torch --index-url https://download.pytorch.org/whl/cu124
+pip install unsloth trl peft bitsandbytes transformers datasets
+pip install chromadb sentence-transformers rank-bm25
+```
+
+On Windows, also run:
+```powershell
+$env:PYTHONUTF8="1"
+```
+
+**Step 2 — Download the trained adapter weights**
+
+```bash
+python scripts/download_weights.py
+```
+
+This downloads the LoRA adapter (~145 MB) from the [v1.0 release](https://github.com/JasonScriptObjNot/deductive-reasoning-llm/releases/tag/v1.0) and extracts it into `outputs/reasoner_adapter/`. The base model (DeepSeek-R1-Distill-Qwen-7B) is pulled automatically from HuggingFace on first run.
+
+**Step 3 — Run**
+
+Try one of the provided examples:
+
+```bash
+python scripts/demo.py --file examples/climate_treaty.txt      # 6-step forward chain
+python scripts/demo.py --file examples/contrapositive.txt      # modus tollens
+python scripts/demo.py --file examples/medical_triage.txt      # 3-step chain
+python scripts/demo.py --file examples/disjunctive_syllogism.txt
+```
+
+Or replay a benchmark problem with live verbose output:
+
+```bash
+python scripts/demo.py --benchmark B6
+```
+
+Or enter your own premises at the console:
 
 ```bash
 python scripts/demo.py
 ```
 
-Or load from a file:
-
-```bash
-python scripts/demo.py --file examples/climate_treaty.txt
-python scripts/demo.py --file examples/contrapositive.txt
-python scripts/demo.py --file examples/medical_triage.txt
-python scripts/demo.py --file examples/disjunctive_syllogism.txt
-```
-
-**File format:**
+**File format** (see [`examples/`](examples/) for templates):
 ```
 # Comments and blank lines are ignored
 goal: Your conclusion here.
@@ -129,9 +160,7 @@ premise: First fact or rule, in plain English.
 premise: Second fact or rule.
 ```
 
-See the [`examples/`](examples/) directory for templates.
-
-### Run the benchmark suite
+**Run the full benchmark suite:**
 
 ```bash
 python scripts/run_eval.py --mode e2e --pair-search 12 --goal-proj 9
@@ -141,22 +170,10 @@ Runs all nine benchmarks and writes a fresh trace set to `outputs/eval_traces/<t
 
 ---
 
-## Training
+## Training from scratch
 
 > Requires: NVIDIA GPU with ≥16GB VRAM (tested on RTX 3090 Ti, CUDA 12.4).
-
-### Install
-
-```bash
-pip install torch --index-url https://download.pytorch.org/whl/cu124
-pip install unsloth trl peft bitsandbytes transformers datasets
-pip install chromadb sentence-transformers rank-bm25
-```
-
-On Windows:
-```powershell
-$env:PYTHONUTF8="1"
-```
+> Use the same install steps from Option B above if you haven't already.
 
 ### Build training data
 

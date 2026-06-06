@@ -1,0 +1,13 @@
+# Modus ponens chain — inheritance law
+# Tests chaining through legal rules to a property outcome.
+# Natural language: no "any X who Y" stiffness, uses realistic legal phrasing.
+#
+# Run: python scripts/demo.py --file examples/inheritance.txt
+
+goal: Elena inherits the entire estate.
+
+premise: The estate is divided equally among all surviving children who do not contest the will.
+premise: A child who contests the will forfeits their share.
+premise: A forfeited share is redistributed equally among the non-contesting heirs.
+premise: Marcus and Sophie both contested the will.
+premise: Elena is the only surviving child who did not contest the will.

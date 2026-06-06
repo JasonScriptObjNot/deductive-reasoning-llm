@@ -1,0 +1,13 @@
+# Disjunctive syllogism + forward chain — graduate scholarship
+# Tests eliminating one disjunct via a chain of consequences, then applying the remaining option.
+# Premises use realistic university policy language.
+#
+# Run: python scripts/demo.py --file examples/scholarship.txt
+
+goal: Priya will need to write a thesis to graduate.
+
+premise: Graduate students in the program must either hold a departmental scholarship or write a thesis to graduate.
+premise: The departmental scholarship requires maintaining a GPA above 3.7.
+premise: Any student whose GPA falls below the scholarship threshold loses their scholarship immediately.
+premise: A student who has lost their scholarship is no longer considered a scholarship holder.
+premise: Priya's GPA dropped to 3.4 after her second semester.

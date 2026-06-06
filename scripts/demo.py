@@ -160,11 +160,31 @@ def main() -> None:
     print(f"  Iterations : {result['iterations']}")
 
     if result["status"] == "PROOF_FOUND":
+        detail = result.get("proof_steps_detail", [])
+        n_derived = sum(1 for d in detail if not d["is_seed"])
+        # build label map: Px for seeds, Dx for derived (in iteration order)
+        label_map: dict[str, str] = {}
+        p_idx = d_idx = 0
+        for d in detail:
+            if d["is_seed"]:
+                p_idx += 1
+                label_map[d["text"]] = f"P{p_idx}"
+            else:
+                d_idx += 1
+                label_map[d["text"]] = f"D{d_idx}"
+
         print()
-        print("  PROOF TRACE")
-        print("  ─" * 35)
-        for i, step in enumerate(result["proof_tree"], 1):
-            print(f"  {i:>2}. {step}")
+        print(f"  PROOF  ({n_derived} derived step{'s' if n_derived != 1 else ''}, derivation order)")
+        print("  " + "─" * 55)
+        for d in detail:
+            lbl = label_map[d["text"]]
+            print(f"  [{lbl}]  {d['text']}")
+            if not d["is_seed"]:
+                parent_lbls = [label_map.get(p, "?") for p in d["parent_texts"]]
+                if parent_lbls:
+                    print(f"         ↑ {', '.join('['+l+']' for l in parent_lbls)}")
+        print()
+        print(f"  ∴  {goal}")
     print("  ═" * 35)
 
     # ── Optionally save trace ─────────────────────────────────────────────────

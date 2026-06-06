@@ -212,31 +212,20 @@ def _write_problem_trace(prob: dict, result: dict, path: str) -> None:
     # ── Attributed proof (expert verification section) ────────────────────────
     lines += ["", "═" * W]
     if status == "PROOF_FOUND" and proof_detail:
-        lines += ["PROOF  (for expert verification)", "═" * W, ""]
+        n_derived = sum(1 for d in proof_detail if not d["is_seed"])
+        lines += [f"PROOF  ({n_derived} derived step{'s' if n_derived != 1 else ''}, derivation order)", "═" * W, ""]
         label_map = _label_proof(proof_detail)
 
-        # Premises block
-        lines.append("  Premises:")
+        # Single linear chain — seeds first (iter 0), then derived steps in order
         for d in proof_detail:
-            if d["is_seed"]:
-                lines.append(f"    [{label_map[d['text']]}]  {d['text']}")
-        lines.append("")
-
-        # Derivation block — each step with attribution
-        lines.append("  Derivation:")
-        for d in proof_detail:
-            if d["is_seed"]:
-                continue
             lbl = label_map[d["text"]]
-            parent_lbls = [label_map.get(p, "?") for p in d["parent_texts"]]
-            from_str = f"  ← {', '.join('['+l+']' for l in parent_lbls)}" if parent_lbls else ""
-            lines.append(f"    [{lbl}]  {d['text']}{from_str}")
+            lines.append(f"  [{lbl}]  {d['text']}")
+            if not d["is_seed"]:
+                parent_lbls = [label_map.get(p, "?") for p in d["parent_texts"]]
+                if parent_lbls:
+                    lines.append(f"         ↑ {', '.join('['+l+']' for l in parent_lbls)}")
 
-        lines += [
-            "",
-            f"  ∴  Goal established: {goal}",
-            "",
-        ]
+        lines += ["", f"  ∴  {goal}", ""]
     else:
         lines += [
             f"STATUS: {status}",
@@ -296,18 +285,13 @@ def _write_summary(benchmarks: list[dict], results: list[dict], path: str) -> No
             continue
 
         label_map = _label_proof(detail)
-        lines.append("  Premises:")
         for d in detail:
-            if d["is_seed"]:
-                lines.append(f"    [{label_map[d['text']]}]  {d['text']}")
-        lines.append("  Derivation:")
-        for d in detail:
-            if d["is_seed"]:
-                continue
             lbl = label_map[d["text"]]
-            parent_lbls = [label_map.get(p, "?") for p in d["parent_texts"]]
-            from_str = f"  ← {', '.join('['+l+']' for l in parent_lbls)}" if parent_lbls else ""
-            lines.append(f"    [{lbl}]  {d['text']}{from_str}")
+            lines.append(f"  [{lbl}]  {d['text']}")
+            if not d["is_seed"]:
+                parent_lbls = [label_map.get(p, "?") for p in d["parent_texts"]]
+                if parent_lbls:
+                    lines.append(f"         ↑ {', '.join('['+l+']' for l in parent_lbls)}")
         lines.append(f"  ∴  {prob['goal']}")
 
     lines += ["", "═" * W]

@@ -1,0 +1,16 @@
+# Convergent chains — academic advisory board
+# Two independent chains (publication prestige + citation count) both reach the same
+# intermediate conclusion, which then triggers the final outcome.
+# Premises use natural academic/professional language.
+#
+# Run: python scripts/demo.py --file examples/advisory_board.txt
+
+goal: Dr. Osei will be invited to join the advisory board.
+
+premise: Researchers who publish in a top-tier journal within their first three years are considered rising stars in their field.
+premise: Any researcher whose work is cited more than fifty times in its first year is automatically nominated by the board chair.
+premise: The board chair is a current board member.
+premise: Rising stars who are nominated by a current board member are invited to join the advisory board.
+premise: Dr. Osei published in Nature Methods in her second year.
+premise: Nature Methods is a top-tier journal.
+premise: Dr. Osei's paper received 73 citations in its first year of publication.

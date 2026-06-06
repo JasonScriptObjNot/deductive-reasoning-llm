@@ -919,7 +919,8 @@ def run_loop(
         steps.append(new_step)
         id_map[pid] = new_step
         retriever.add(next_step_text)
-        if not next_step_text.startswith(REFUSAL_TEXT[:20]):
+        from dras.validator import _REFUSAL_RE as _rre
+        if not _rre.match(next_step_text.strip()):
             last_derived = next_step_text
 
         # Check if this step satisfies the current sub-goal; if so, pop it
@@ -958,7 +959,7 @@ def run_loop(
                 "parent_texts": parent_texts,
                 "iteration": ps.iteration,
             })
-        proof_steps_detail.sort(key=lambda x: proof_tree_order.get(x["text"], 999))
+        proof_steps_detail.sort(key=lambda x: x["iteration"])
     else:
         events.append({"type": "max_iter", "iterations": cfg.max_iterations})
 

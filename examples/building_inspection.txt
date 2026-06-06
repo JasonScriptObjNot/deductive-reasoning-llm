@@ -1,0 +1,10 @@
+# Modus tollens — fire safety inspection
+# Tests reasoning by contrapositive from a universal requirement.
+# Short and clean: the goal is a negation derived from a missing necessary condition.
+#
+# Run: python scripts/demo.py --file examples/building_inspection.txt
+
+goal: The Harlow Building did not pass its fire safety inspection.
+
+premise: Every building that passes a fire safety inspection has functioning sprinklers on every floor.
+premise: The Harlow Building has had a non-functional sprinkler system on the third floor for six months.

@@ -1,0 +1,14 @@
+# Long forward chain (6 steps) — environmental cascade
+# Tests chaining through a cause-effect sequence in natural science language.
+# Premises read like a textbook passage, not formal logic notation.
+#
+# Run: python scripts/demo.py --file examples/river_ecosystem.txt
+
+goal: The native fish population in the Arlen River will decline sharply.
+
+premise: When nitrogen runoff from farmland enters a river system, algae blooms rapidly.
+premise: Rapid algae growth depletes the oxygen dissolved in the water.
+premise: Fish and aquatic insects cannot survive in water with severely depleted oxygen levels.
+premise: The mayfly is an aquatic insect and a key food source for native river fish.
+premise: When a fish's primary food source disappears from the ecosystem, the fish population declines sharply.
+premise: Heavy spring rains washed nitrogen-rich fertilizer from surrounding farmland into the Arlen River last week.

@@ -26,6 +26,15 @@ from dras.utils import get_logger
 
 log = get_logger(__name__)
 
+# Matches all observed refusal variants regardless of leading "There is/are":
+#   "No valid inference follows..."
+#   "There is no valid inference following..."
+#   "There are no valid inferential steps..."
+_REFUSAL_RE = re.compile(
+    r"^(there\s+(is|are)\s+)?no\s+valid\s+(inf\w*|step\w*)",
+    re.IGNORECASE,
+)
+
 # ── Contradiction-check prompt ───────────────────────────────────────────────
 _CONTRADICTION_PROMPT = (
     "You are a strict logic checker. Answer ONLY 'yes' or 'no'.\n\n"
@@ -65,7 +74,7 @@ def is_well_formed(text: str) -> tuple[bool, str]:
     # stored in the retriever (stored refusals poison subsequent retrievals).
     # Rejection here increments consecutive_rejects, triggering the sampling
     # fallback after 3 in a row, which is the right escape mechanism.
-    if text.lower().startswith(REFUSAL_TEXT[:20].lower()):
+    if _REFUSAL_RE.match(text.strip()):
         return False, "Refusal text is not a valid inference step."
     return True, ""
 
@@ -81,7 +90,7 @@ def is_grounded(step: str, premises: list[str]) -> tuple[bool, str]:
     Uses a simple heuristic: capitalised words (potential named entities / key
     terms) in the step that appear in no premise are flagged.
     """
-    if step.strip().startswith(REFUSAL_TEXT[:15]):
+    if _REFUSAL_RE.match(step.strip()):
         return True, ""   # refusals are always grounded — they assert nothing
 
     # collect all words from premises (lowercased, alpha only)
